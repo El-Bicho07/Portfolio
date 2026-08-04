@@ -1,11 +1,11 @@
 import Link from "next/link";
-import { ArrowRight, Code, Cpu, MapPin } from "lucide-react";
+import { ArrowRight, Cpu, MapPin } from "lucide-react";
 import { RevealOnScroll } from "@/components/RevealOnScroll";
 import { PERSONAL_INFO } from "@/data/portfolioData";
 
 export default function Home() {
   return (
-    <div className="space-y-24 py-8">
+    <div className="space-y-20 py-8">
       {/* 1. Hero Section */}
       <RevealOnScroll delayMs={0}>
         <section className="relative overflow-hidden rounded-2xl glass-card p-8 sm:p-12 lg:p-16 border border-[var(--border)]">
@@ -53,36 +53,8 @@ export default function Home() {
         </section>
       </RevealOnScroll>
 
-      {/* 2. Brief Intro / About Teaser */}
+      {/* 2. Condensed Tech Stack Strip */}
       <RevealOnScroll delayMs={150}>
-        <section className="glass-card rounded-2xl p-8 sm:p-10 border border-[var(--border)]">
-          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-            <div className="space-y-3 max-w-2xl">
-              <div className="flex items-center gap-2 text-[var(--accent)] text-xs font-semibold uppercase tracking-widest">
-                <Code className="w-4 h-4" />
-                <span>Who I Am</span>
-              </div>
-              <h2 className="text-2xl sm:text-3xl font-bold font-heading">
-                Driven by Machine Learning & Developer Tools
-              </h2>
-              <p className="text-sm sm:text-base text-[var(--text-secondary)] leading-relaxed">
-                {PERSONAL_INFO.whoIAm}
-              </p>
-            </div>
-
-            <Link
-              href="/about"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--accent)] hover:underline whitespace-nowrap"
-            >
-              <span>Read more about me</span>
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-        </section>
-      </RevealOnScroll>
-
-      {/* 3. Condensed Skills Strip */}
-      <RevealOnScroll delayMs={300}>
         <section className="space-y-4">
           <div className="flex items-center justify-between">
             <h3 className="text-xs uppercase tracking-widest font-semibold text-[var(--text-secondary)] flex items-center gap-2">
@@ -93,7 +65,7 @@ export default function Home() {
               href="/skills"
               className="text-xs text-[var(--accent)] hover:underline font-medium"
             >
-              View Orbiting Skills →
+              View All Skills →
             </Link>
           </div>
 
@@ -115,8 +87,8 @@ export default function Home() {
         </section>
       </RevealOnScroll>
 
-      {/* 4. Featured Projects Preview */}
-      <RevealOnScroll delayMs={450}>
+      {/* 3. Featured Projects Preview */}
+      <RevealOnScroll delayMs={300}>
         <section className="space-y-6">
           <div className="flex items-center justify-between">
             <div>
