@@ -170,7 +170,7 @@ export function ProtosemGallery() {
             {/* Modal Header */}
             <div className="space-y-2 pr-8 border-b border-[var(--border)] pb-4">
               <span className="px-2.5 py-0.5 rounded-md bg-[var(--accent-muted)] border border-[var(--accent)]/30 text-[var(--accent)] text-[11px] uppercase font-bold tracking-wider">
-                {selectedUpdate.week} — {selectedUpdate.date}
+                {selectedUpdate.week} · {selectedUpdate.date}
               </span>
               <h2 className="text-2xl sm:text-3xl font-extrabold font-heading text-[var(--text-primary)]">
                 {selectedUpdate.title}
@@ -288,7 +288,7 @@ export function ProtosemGallery() {
 
             {/* Counter Footer */}
             <div className="w-full mt-3 pt-3 border-t border-[var(--border)] flex items-center justify-between text-xs text-[var(--text-secondary)] font-semibold">
-              <span>{selectedUpdate?.week} — {selectedUpdate?.title}</span>
+              <span>{selectedUpdate?.week} · {selectedUpdate?.title}</span>
               <span className="text-[var(--accent)]">
                 {enlargedImageIndex + 1} / {activeImages.length}
               </span>
