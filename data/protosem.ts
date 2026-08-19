@@ -149,4 +149,60 @@ export const PROTOSEM_ENTRIES: ProtosemEntry[] = [
     ],
     images: [],
   },
+  {
+    id: "week-03",
+    weekNumber: 3,
+    week: "Week 3",
+    date: "Aug 10-14, 2026",
+    title: "Electronics Basics, Systems Thinking & Fusion 360",
+    summary:
+      "Explored core electronics fundamentals, systems and design thinking frameworks, Fusion 360 3D CAD modeling, and a hands-on paper rocket team activity.",
+    description:
+      "Explored core electronics fundamentals, systems and design thinking frameworks, Fusion 360 3D CAD modeling, and a hands-on paper rocket team activity.",
+    content:
+      "Covered core electronics fundamentals: resistors, capacitors, and conductors, transistor types (BJT, MOSFET, IGBT, FET), resistor color coding, diodes and their types, and the different categories of AC and DC motors. Explored systems thinking, which combines mechanical, electrical, and software disciplines to develop a product. Went through the design thinking framework in three phases: Immersion (Empathize, Define), Ideation (Ideate), and Implementation (Prototype, Test, Feedback, and Iterate) for better outcomes. Learned the fundamentals of Fusion 360: sketch tools, Extrude, Revolve, Hole, Fillet, and Shell. Used a reference image found online to model a design in Clay. Explored Circular and Rectangular Pattern tools, then followed a tutorial on building a Lever Bracket in Fusion 360, using a reference sketch image from the web along with real dimensions and constraints. Paired into teams of two for a paper rocket activity: built one plane without phone access in five minutes, then a second with phone access in five minutes. The team whose plane flew farthest won. Wrapped up pending work on the clay model and Lever Bracket part modeling, with Fusion 360 design evaluations conducted for a few team members.",
+    detailReport:
+      "Covered core electronics fundamentals: resistors, capacitors, and conductors, transistor types (BJT, MOSFET, IGBT, FET), resistor color coding, diodes and their types, and the different categories of AC and DC motors. Explored systems thinking, which combines mechanical, electrical, and software disciplines to develop a product. Went through the design thinking framework in three phases: Immersion (Empathize, Define), Ideation (Ideate), and Implementation (Prototype, Test, Feedback, and Iterate) for better outcomes. Learned the fundamentals of Fusion 360: sketch tools, Extrude, Revolve, Hole, Fillet, and Shell. Used a reference image found online to model a design in Clay. Explored Circular and Rectangular Pattern tools, then followed a tutorial on building a Lever Bracket in Fusion 360, using a reference sketch image from the web along with real dimensions and constraints. Paired into teams of two for a paper rocket activity: built one plane without phone access in five minutes, then a second with phone access in five minutes. The team whose plane flew farthest won. Wrapped up pending work on the clay model and Lever Bracket part modeling, with Fusion 360 design evaluations conducted for a few team members.",
+    notes: [
+      "Covered core electronics fundamentals, components & motor types.",
+      "Explored systems thinking & 3-phase design thinking framework.",
+      "Learned Fusion 360 sketch, 3D tools & Lever Bracket modeling.",
+      "Participated in paper rocket activity & clay model evaluation.",
+    ],
+    skillsUsed: [
+      "Electronics Fundamentals",
+      "Fusion 360",
+      "Systems Thinking",
+      "Design Thinking",
+      "CAD/Clay Modeling",
+      "Teamwork",
+    ],
+    sections: [
+      {
+        subheading: "Electronics Basics",
+        text: "Covered core electronics fundamentals: resistors, capacitors, and conductors, transistor types (BJT, MOSFET, IGBT, FET), resistor color coding, diodes and their types, and the different categories of AC and DC motors.",
+      },
+      {
+        subheading: "Systems Thinking and Design Thinking",
+        text: "Explored systems thinking, which combines mechanical, electrical, and software disciplines to develop a product. Went through the design thinking framework in three phases: Immersion (Empathize, Define), Ideation (Ideate), and Implementation (Prototype, Test, Feedback, and Iterate) for better outcomes.",
+      },
+      {
+        subheading: "Fusion 360 Basics",
+        text: "Learned the fundamentals of Fusion 360: sketch tools, Extrude, Revolve, Hole, Fillet, and Shell. Used a reference image found online to model a design in Clay.",
+      },
+      {
+        subheading: "Patterns and the Lever Bracket Tutorial",
+        text: "Explored Circular and Rectangular Pattern tools, then followed a tutorial on building a Lever Bracket in Fusion 360, using a reference sketch image from the web along with real dimensions and constraints.",
+      },
+      {
+        subheading: "Paper Rocket Team Activity",
+        text: "Paired into teams of two for a paper rocket activity: built one plane without phone access in five minutes, then a second with phone access in five minutes. The team whose plane flew farthest won.",
+      },
+      {
+        subheading: "Clay Model and Evaluation",
+        text: "Wrapped up pending work on the clay model and Lever Bracket part modeling, with Fusion 360 design evaluations conducted for a few team members.",
+      },
+    ],
+    images: [],
+  },
 ];

@@ -30,8 +30,13 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${fontHeading.variable} ${fontBody.variable} h-full antialiased`}
+      data-scroll-behavior="smooth"
+      suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col bg-[var(--bg)] text-[var(--text-primary)] font-body">
+      <body
+        className="min-h-full flex flex-col bg-[var(--bg)] text-[var(--text-primary)] font-body"
+        suppressHydrationWarning
+      >
         <Header />
         <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-12">
           {children}
