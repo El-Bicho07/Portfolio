@@ -205,4 +205,182 @@ export const PROTOSEM_ENTRIES: ProtosemEntry[] = [
     ],
     images: [],
   },
+  {
+    id: "week-04",
+    weekNumber: 4,
+    week: "Week 4",
+    date: "Aug 17-21, 2026",
+    title: "Mechanical Design, Laser Cutting & Team Role Selection",
+    summary:
+      "Continued Fusion 360 CAD modeling, fabricated an acrylic Assassin's Creed logo using laser cutting, designed an MQ-4 sensor enclosure, and selected the Hacker technical role for team formation.",
+    description:
+      "Continued Fusion 360 CAD modeling, fabricated an acrylic Assassin's Creed logo using laser cutting, designed an MQ-4 sensor enclosure, and selected the Hacker technical role for team formation.",
+    content:
+      "Continued working with Fusion 360, this time designing a water bottle. Ran into early difficulties understanding some of the tools and debugging errors in the software, but with peer guidance picked up what was needed and got more comfortable, to the point of being able to help teammates debug their own designs. For the laser cutting activity, chose an Assassin's Creed logo as the design and used the laser cutter to inscribe it onto a 5x5cm white transparent acrylic piece. Good practical experience in taking a digital design through to a physical fabricated object. Recreated a simple cam and follower mechanism in Fusion 360, using joints and motion constraints to represent its movement. Helped clarify how the rotational motion of the cam translates into the follower's movement. Designed an enclosure for an MQ-4 sensor, working around its physical dimensions and requirements, and got introduced to the workflow of preparing a design for 3D printing. At the Marketplace, chose not to go forward for the Visionary role and instead took on the Hacker role, the technical role within the team, focused on the implementation side of the project. Listened to the visionaries present their challenge statements, then went through a bidding process for the one I wanted to work on, submitting a CV showing past work and skills. Teams were formed based on the challenge requirements and the CVs submitted.",
+    detailReport:
+      "Continued working with Fusion 360, this time designing a water bottle. Ran into early difficulties understanding some of the tools and debugging errors in the software, but with peer guidance picked up what was needed and got more comfortable, to the point of being able to help teammates debug their own designs. For the laser cutting activity, chose an Assassin's Creed logo as the design and used the laser cutter to inscribe it onto a 5x5cm white transparent acrylic piece. Good practical experience in taking a digital design through to a physical fabricated object. Recreated a simple cam and follower mechanism in Fusion 360, using joints and motion constraints to represent its movement. Helped clarify how the rotational motion of the cam translates into the follower's movement. Designed an enclosure for an MQ-4 sensor, working around its physical dimensions and requirements, and got introduced to the workflow of preparing a design for 3D printing. At the Marketplace, chose not to go forward for the Visionary role and instead took on the Hacker role, the technical role within the team, focused on the implementation side of the project. Listened to the visionaries present their challenge statements, then went through a bidding process for the one I wanted to work on, submitting a CV showing past work and skills. Teams were formed based on the challenge requirements and the CVs submitted.",
+    notes: [
+      "Designed a water bottle and cam-and-follower mechanism in Fusion 360.",
+      "Fabricated an Assassin's Creed logo on acrylic using laser cutting.",
+      "Designed a 3D printable enclosure for an MQ-4 sensor.",
+      "Selected Hacker role and joined team for the challenge statement.",
+    ],
+    skillsUsed: [
+      "Fusion 360",
+      "Laser Cutting",
+      "Mechanism Design",
+      "3D Printing",
+      "Teamwork",
+    ],
+    sections: [
+      {
+        subheading: "Mechanical Design and Peer Debugging",
+        text: "Continued working with Fusion 360, this time designing a water bottle. Ran into early difficulties understanding some of the tools and debugging errors in the software, but with peer guidance picked up what was needed and got more comfortable, to the point of being able to help teammates debug their own designs.",
+      },
+      {
+        subheading: "Laser Cutting: Assassin's Creed Logo",
+        text: "For the laser cutting activity, chose an Assassin's Creed logo as the design and used the laser cutter to inscribe it onto a 5x5cm white transparent acrylic piece. Good practical experience in taking a digital design through to a physical fabricated object.",
+      },
+      {
+        subheading: "Animation and Mechanisms: Cam and Follower",
+        text: "Recreated a simple cam and follower mechanism in Fusion 360, using joints and motion constraints to represent its movement. Helped clarify how the rotational motion of the cam translates into the follower's movement.",
+      },
+      {
+        subheading: "3D Printing: MQ-4 Sensor Enclosure",
+        text: "Designed an enclosure for an MQ-4 sensor, working around its physical dimensions and requirements, and got introduced to the workflow of preparing a design for 3D printing.",
+      },
+      {
+        subheading: "Marketplace: Choosing a Team Role",
+        text: "At the Marketplace, chose not to go forward for the Visionary role and instead took on the Hacker role, the technical role within the team, focused on the implementation side of the project.",
+      },
+      {
+        subheading: "Challenge Statement Selection and Team Formation",
+        text: "Listened to the visionaries present their challenge statements, then went through a bidding process for the one I wanted to work on, submitting a CV showing past work and skills. Teams were formed based on the challenge requirements and the CVs submitted.",
+      },
+    ],
+    images: [],
+  },
+  {
+    id: "week-05",
+    weekNumber: 5,
+    week: "Week 5",
+    date: "Aug 24-28, 2026",
+    title: "UI/UX Design, User Research & Project Brief",
+    summary:
+      "Explored UI/UX design with Figma and FigJam, conducted customer discovery for small business inventory management, met with stakeholders, and covered project management fundamentals.",
+    description:
+      "Explored UI/UX design with Figma and FigJam, conducted customer discovery for small business inventory management, met with stakeholders, and covered project management fundamentals.",
+    content:
+      "Started the week with an introduction to UI/UX design thinking, exploring Figma and FigJam for wireframing, prototyping, collaborative ideation, and planning user flows, with the focus on understanding the user and their requirements before moving into development. Used FigJam to organize the project's research, laying out the problem statement, process, responses, and findings in a visual, collaborative board. Worked in Figma on wireframes, sitemaps, and product flows to establish the product's basic information architecture and interface structure before development. The sessions emphasized starting from the user and the problem rather than visual appearance first, and designing around user requirements instead of personal preference, with Figma and FigJam as the tools for turning those ideas into tangible flows. As part of customer discovery, prepared and distributed structured feedback forms to gather input from potential users, using the responses to understand the problem from the perspective of people who'd actually use the system. Had an online meeting with our stakeholder, discussing the problem statement and asking questions to get a clearer picture of what was actually expected from the solution. Our project focus became an inventory management system for small scale businesses. Reached out to multiple local business owners about their current inventory practices and found a real spread: some already used dedicated software, some used none at all, and some relied on Excel or spreadsheets, showing how differently small businesses handle inventory depending on their level of digital adoption. Also got an introduction to project management fundamentals: the responsibilities and skills of a project manager, risk management, stakeholder communication, and servant leadership.",
+    detailReport:
+      "Started the week with an introduction to UI/UX design thinking, exploring Figma and FigJam for wireframing, prototyping, collaborative ideation, and planning user flows, with the focus on understanding the user and their requirements before moving into development. Used FigJam to organize the project's research, laying out the problem statement, process, responses, and findings in a visual, collaborative board. Worked in Figma on wireframes, sitemaps, and product flows to establish the product's basic information architecture and interface structure before development. The sessions emphasized starting from the user and the problem rather than visual appearance first, and designing around user requirements instead of personal preference, with Figma and FigJam as the tools for turning those ideas into tangible flows. As part of customer discovery, prepared and distributed structured feedback forms to gather input from potential users, using the responses to understand the problem from the perspective of people who'd actually use the system. Had an online meeting with our stakeholder, discussing the problem statement and asking questions to get a clearer picture of what was actually expected from the solution. Our project focus became an inventory management system for small scale businesses. Reached out to multiple local business owners about their current inventory practices and found a real spread: some already used dedicated software, some used none at all, and some relied on Excel or spreadsheets, showing how differently small businesses handle inventory depending on their level of digital adoption. Also got an introduction to project management fundamentals: the responsibilities and skills of a project manager, risk management, stakeholder communication, and servant leadership.",
+    notes: [
+      "Structured research and wireframes in FigJam and Figma.",
+      "Gathered user feedback from local business owners on inventory practices.",
+      "Met online with stakeholder to refine challenge requirements.",
+      "Learned project management fundamentals and servant leadership.",
+    ],
+    skillsUsed: [
+      "Figma",
+      "FigJam",
+      "UI/UX Design",
+      "Customer Discovery",
+      "Stakeholder Communication",
+      "Project Management",
+    ],
+    sections: [
+      {
+        subheading: "Introduction to UI/UX Design and Prototyping",
+        text: "Started the week with an introduction to UI/UX design thinking, exploring Figma and FigJam for wireframing, prototyping, collaborative ideation, and planning user flows, with the focus on understanding the user and their requirements before moving into development.",
+      },
+      {
+        subheading: "FigJam: Research and Idea Organization",
+        text: "Used FigJam to organize the project's research, laying out the problem statement, process, responses, and findings in a visual, collaborative board.",
+      },
+      {
+        subheading: "Figma: Wireframes and Product Structure",
+        text: "Worked in Figma on wireframes, sitemaps, and product flows to establish the product's basic information architecture and interface structure before development.",
+      },
+      {
+        subheading: "UI/UX Design Principles",
+        text: "The sessions emphasized starting from the user and the problem rather than visual appearance first, and designing around user requirements instead of personal preference, with Figma and FigJam as the tools for turning those ideas into tangible flows.",
+      },
+      {
+        subheading: "User Research",
+        text: "As part of customer discovery, prepared and distributed structured feedback forms to gather input from potential users, using the responses to understand the problem from the perspective of people who'd actually use the system.",
+      },
+      {
+        subheading: "Stakeholder Meeting",
+        text: "Had an online meeting with our stakeholder, discussing the problem statement and asking questions to get a clearer picture of what was actually expected from the solution.",
+      },
+      {
+        subheading: "Project Brief: Inventory Management for Small Businesses",
+        text: "Our project focus became an inventory management system for small scale businesses. Reached out to multiple local business owners about their current inventory practices and found a real spread: some already used dedicated software, some used none at all, and some relied on Excel or spreadsheets, showing how differently small businesses handle inventory depending on their level of digital adoption.",
+      },
+      {
+        subheading: "Project Management Fundamentals",
+        text: "Also got an introduction to project management fundamentals: the responsibilities and skills of a project manager, risk management, stakeholder communication, and servant leadership.",
+      },
+    ],
+    images: [],
+  },
+  {
+    id: "week-06",
+    weekNumber: 6,
+    week: "Week 6",
+    date: "Aug 31-Sep 4, 2026",
+    title: "Implementation Planning, Embedded Systems & Soldering",
+    summary:
+      "Defined first level solution architecture and UI/UX mindmaps, learned computational hardware and embedded systems, and assembled a working 555 timer IC circuit.",
+    description:
+      "Defined first level solution architecture and UI/UX mindmaps, learned computational hardware and embedded systems, and assembled a working 555 timer IC circuit.",
+    content:
+      "Started with a first level implementation discussion for the proposed solution, identifying its main components and thinking through the architecture early enough to surface ambiguities before development began. Worked with mindmaps, sitemaps, and wireframes as part of the UI/UX architecture process, using mindmaps to organize concepts, sitemaps to structure information, and wireframes to plan the interface and user flow. Covered the basics of power, voltage, and current, the foundation for understanding electronic circuits and hardware systems. Introduced to microcontrollers, microprocessors, and embedded system architecture, and how embedded systems interact with the physical world through sensors and actuators. Practiced soldering electronic components onto a dot/PCB board, working with a soldering iron, wires, and discrete components to physically assemble a circuit. The soldering activity resulted in a working 555 timer IC circuit, built with a 555 timer IC, two LEDs, resistors, an electrolytic capacitor, and power leads mounted on the board. Also got hands-on exposure to hardware prototyping and enclosure work in the lab.",
+    detailReport:
+      "Started with a first level implementation discussion for the proposed solution, identifying its main components and thinking through the architecture early enough to surface ambiguities before development began. Worked with mindmaps, sitemaps, and wireframes as part of the UI/UX architecture process, using mindmaps to organize concepts, sitemaps to structure information, and wireframes to plan the interface and user flow. Covered the basics of power, voltage, and current, the foundation for understanding electronic circuits and hardware systems. Introduced to microcontrollers, microprocessors, and embedded system architecture, and how embedded systems interact with the physical world through sensors and actuators. Practiced soldering electronic components onto a dot/PCB board, working with a soldering iron, wires, and discrete components to physically assemble a circuit. The soldering activity resulted in a working 555 timer IC circuit, built with a 555 timer IC, two LEDs, resistors, an electrolytic capacitor, and power leads mounted on the board. Also got hands-on exposure to hardware prototyping and enclosure work in the lab.",
+    notes: [
+      "Mapped UI/UX architecture and first level implementation plan.",
+      "Covered fundamentals of power, electronics, and embedded systems.",
+      "Practiced hands-on soldering on dot/PCB boards.",
+      "Assembled and tested a working 555 timer IC circuit.",
+    ],
+    skillsUsed: [
+      "UI/UX Architecture",
+      "Electronics Fundamentals",
+      "Embedded Systems",
+      "Soldering",
+      "Circuit Design",
+    ],
+    sections: [
+      {
+        subheading: "First Level Implementation Planning",
+        text: "Started with a first level implementation discussion for the proposed solution, identifying its main components and thinking through the architecture early enough to surface ambiguities before development began.",
+      },
+      {
+        subheading: "UI/UX Architecture",
+        text: "Worked with mindmaps, sitemaps, and wireframes as part of the UI/UX architecture process, using mindmaps to organize concepts, sitemaps to structure information, and wireframes to plan the interface and user flow.",
+      },
+      {
+        subheading: "Computational Hardware Fundamentals",
+        text: "Covered the basics of power, voltage, and current, the foundation for understanding electronic circuits and hardware systems.",
+      },
+      {
+        subheading: "Embedded Systems",
+        text: "Introduced to microcontrollers, microprocessors, and embedded system architecture, and how embedded systems interact with the physical world through sensors and actuators.",
+      },
+      {
+        subheading: "Hands-On Soldering",
+        text: "Practiced soldering electronic components onto a dot/PCB board, working with a soldering iron, wires, and discrete components to physically assemble a circuit.",
+      },
+      {
+        subheading: "555 Timer Circuit",
+        text: "The soldering activity resulted in a working 555 timer IC circuit, built with a 555 timer IC, two LEDs, resistors, an electrolytic capacitor, and power leads mounted on the board.",
+      },
+      {
+        subheading: "Hardware Prototyping",
+        text: "Also got hands-on exposure to hardware prototyping and enclosure work in the lab.",
+      },
+    ],
+    images: [],
+  },
 ];
