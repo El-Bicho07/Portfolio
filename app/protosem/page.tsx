@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { Layers, Calendar, ArrowRight, FileText } from "lucide-react";
+import { Layers, Calendar, ArrowRight, FileText, ExternalLink } from "lucide-react";
 import { RevealOnScroll } from "@/components/RevealOnScroll";
 import { PROTOSEM_ENTRIES } from "@/data/protosem";
 
@@ -50,18 +50,33 @@ export default function ProtosemPage() {
                 </p>
               </div>
 
-              {/* View Document Button (Dynamic Route Link) */}
+              {/* View Document Button (Dynamic Route Link or External New Tab Link) */}
               <div className="pt-2 border-t border-[var(--border)]">
-                <Link
-                  href={`/protosem/week/${entry.weekNumber}`}
-                  className="w-full inline-flex items-center justify-between px-4 py-2.5 rounded-xl bg-[var(--accent-muted)] border border-[var(--accent)]/40 text-[var(--accent)] text-xs font-bold uppercase tracking-wider hover:bg-[var(--accent)] hover:text-[var(--bg)] transition-all duration-200 shadow-sm group/btn"
-                >
-                  <span className="flex items-center gap-2">
-                    <FileText className="w-4 h-4" />
-                    <span>View Document</span>
-                  </span>
-                  <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                </Link>
+                {entry.externalUrl ? (
+                  <a
+                    href={entry.externalUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full inline-flex items-center justify-between px-4 py-2.5 rounded-xl bg-[var(--accent-muted)] border border-[var(--accent)]/40 text-[var(--accent)] text-xs font-bold uppercase tracking-wider hover:bg-[var(--accent)] hover:text-[var(--bg)] transition-all duration-200 shadow-sm group/btn"
+                  >
+                    <span className="flex items-center gap-2">
+                      <FileText className="w-4 h-4" />
+                      <span>View Document</span>
+                    </span>
+                    <ExternalLink className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                  </a>
+                ) : (
+                  <Link
+                    href={`/protosem/week/${entry.weekNumber}`}
+                    className="w-full inline-flex items-center justify-between px-4 py-2.5 rounded-xl bg-[var(--accent-muted)] border border-[var(--accent)]/40 text-[var(--accent)] text-xs font-bold uppercase tracking-wider hover:bg-[var(--accent)] hover:text-[var(--bg)] transition-all duration-200 shadow-sm group/btn"
+                  >
+                    <span className="flex items-center gap-2">
+                      <FileText className="w-4 h-4" />
+                      <span>View Document</span>
+                    </span>
+                    <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                  </Link>
+                )}
               </div>
             </div>
           </RevealOnScroll>

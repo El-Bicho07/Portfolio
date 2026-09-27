@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
-import { X, ChevronLeft, ChevronRight, Maximize2, Calendar, Sparkles, BookOpen, ImageIcon } from "lucide-react";
+import { X, ChevronLeft, ChevronRight, Maximize2, Calendar, Sparkles, BookOpen, ImageIcon, ExternalLink } from "lucide-react";
 import { PROTOSEM_UPDATES, ProtosemUpdate } from "@/data/protosemUpdates";
 
 export function ProtosemGallery() {
@@ -49,7 +49,7 @@ export function ProtosemGallery() {
       {PROTOSEM_UPDATES.map((update) => {
         const hasPhotos = Boolean(update.images && update.images.length > 0);
         const hasDetailReport = Boolean(update.detailReport && update.detailReport.trim().length > 0);
-        const canViewMore = hasPhotos || hasDetailReport;
+        const canViewMore = hasPhotos || hasDetailReport || Boolean(update.externalUrl);
         const thumbnailImages = hasPhotos ? update.images!.slice(0, 2) : [];
 
         return (
@@ -132,16 +132,29 @@ export function ProtosemGallery() {
             {/* View More Button */}
             {canViewMore && (
               <div className="flex justify-end pt-2">
-                <button
-                  onClick={() => {
-                    setSelectedUpdate(update);
-                    setEnlargedImageIndex(null);
-                  }}
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[var(--accent-muted)] border border-[var(--accent)]/40 text-[var(--accent)] text-xs font-bold uppercase tracking-wider hover:bg-[var(--accent)] hover:text-[var(--bg)] transition-all duration-200 shadow-sm"
-                >
-                  <BookOpen className="w-4 h-4" />
-                  <span>View More & Full Report</span>
-                </button>
+                {update.externalUrl ? (
+                  <a
+                    href={update.externalUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[var(--accent-muted)] border border-[var(--accent)]/40 text-[var(--accent)] text-xs font-bold uppercase tracking-wider hover:bg-[var(--accent)] hover:text-[var(--bg)] transition-all duration-200 shadow-sm"
+                  >
+                    <BookOpen className="w-4 h-4" />
+                    <span>View Document</span>
+                    <ExternalLink className="w-4 h-4" />
+                  </a>
+                ) : (
+                  <button
+                    onClick={() => {
+                      setSelectedUpdate(update);
+                      setEnlargedImageIndex(null);
+                    }}
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[var(--accent-muted)] border border-[var(--accent)]/40 text-[var(--accent)] text-xs font-bold uppercase tracking-wider hover:bg-[var(--accent)] hover:text-[var(--bg)] transition-all duration-200 shadow-sm"
+                  >
+                    <BookOpen className="w-4 h-4" />
+                    <span>View More & Full Report</span>
+                  </button>
+                )}
               </div>
             )}
           </section>

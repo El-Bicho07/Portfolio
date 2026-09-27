@@ -46,7 +46,7 @@ export function Header() {
           </span>
         </Link>
 
-        {/* Desktop Navigation Tabs (7 tabs in exact order) */}
+        {/* Desktop Navigation Tabs (8 tabs in exact order) */}
         <nav className="hidden md:flex items-center space-x-1 lg:space-x-2">
           {NAV_ITEMS.map((item) => {
             const active = isTabActive(item.href);

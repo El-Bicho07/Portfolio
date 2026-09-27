@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import {
   ArrowLeft,
   Calendar,
@@ -37,6 +37,9 @@ export default async function ProtosemWeekPage({ params }: WeekPageProps) {
   }
 
   const entry = PROTOSEM_ENTRIES[currentIndex];
+  if (entry.externalUrl) {
+    redirect(entry.externalUrl);
+  }
   const prevEntry = currentIndex > 0 ? PROTOSEM_ENTRIES[currentIndex - 1] : null;
   const nextEntry =
     currentIndex < PROTOSEM_ENTRIES.length - 1

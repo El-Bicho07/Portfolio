@@ -17,6 +17,7 @@ export interface ProtosemEntry {
   skillsUsed?: string[];
   sections?: ProtosemSection[];
   images?: string[];
+  externalUrl?: string;
 }
 
 export const PROTOSEM_ENTRIES: ProtosemEntry[] = [
@@ -380,6 +381,41 @@ export const PROTOSEM_ENTRIES: ProtosemEntry[] = [
         subheading: "Hardware Prototyping",
         text: "Also got hands-on exposure to hardware prototyping and enclosure work in the lab.",
       },
+    ],
+    images: [],
+  },
+  {
+    id: "week-07",
+    weekNumber: 7,
+    week: "Week 7",
+    date: "Sep 7-11, 2026",
+    title: "IoT & Embedded Systems: From Prototype to Production",
+    summary:
+      "Explored IoT and embedded systems through a series of ESP32-based tasks covering HTTP control, MQTT and Adafruit IO, IFTTT automation, Firebase dashboards, sensor integration, relay control, data logging, and export.",
+    description:
+      "Explored IoT and embedded systems through a series of ESP32-based tasks covering HTTP control, MQTT and Adafruit IO, IFTTT automation, Firebase dashboards, sensor integration, relay control, data logging, and export.",
+    content:
+      "Explored IoT and embedded systems through a series of ESP32-based tasks covering HTTP control, MQTT and Adafruit IO, IFTTT automation, Firebase dashboards, sensor integration, relay control, data logging, and export.",
+    detailReport:
+      "Explored IoT and embedded systems through a series of ESP32-based tasks covering HTTP control, MQTT and Adafruit IO, IFTTT automation, Firebase dashboards, sensor integration, relay control, data logging, and export.",
+    externalUrl: "/iot",
+    notes: [
+      "ESP32 HTTP Web Server & HTML LED Control",
+      "Adafruit IO Cloud Dashboard & MQTT Protocol",
+      "IFTTT Event-Driven IoT Automation",
+      "Firebase Realtime Database & Web Dashboard Integration",
+      "Sensor Data Logging, Automatic Control & CSV Export",
+    ],
+    skillsUsed: [
+      "ESP32",
+      "IoT",
+      "HTTP",
+      "MQTT",
+      "Adafruit IO",
+      "IFTTT",
+      "Firebase",
+      "Sensors",
+      "Relay Control",
     ],
     images: [],
   },

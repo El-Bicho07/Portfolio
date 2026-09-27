@@ -4,6 +4,14 @@ const nextConfig: NextConfig = {
   experimental: {
     cpus: 1,
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "res.cloudinary.com",
+      },
+    ],
+  },
 };
 
 export default nextConfig;
