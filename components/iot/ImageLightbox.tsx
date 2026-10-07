@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useEffect, useRef, useCallback } from "react";
+import React, { useEffect, useRef, useCallback, useState } from "react";
+import { createPortal } from "react-dom";
 import { X } from "lucide-react";
 
 interface ImageLightboxProps {
@@ -18,9 +19,14 @@ export function ImageLightbox({
   onClose,
   triggerRef,
 }: ImageLightboxProps) {
+  const [mounted, setMounted] = useState(false);
   const modalRef = useRef<HTMLDivElement>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
   const previousFocusRef = useRef<HTMLElement | null>(null);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const handleKeyDown = useCallback(
     (e: KeyboardEvent) => {
@@ -83,12 +89,12 @@ export function ImageLightbox({
     };
   }, [isOpen, handleKeyDown, triggerRef]);
 
-  if (!isOpen || !src) return null;
+  if (!mounted || !isOpen || !src) return null;
 
-  return (
+  return createPortal(
     <div
       ref={modalRef}
-      className="fixed inset-0 z-[9999] bg-black/90 backdrop-blur-md p-4 sm:p-8 flex items-center justify-center animate-in fade-in duration-200"
+      className="fixed inset-0 z-[99999] bg-black/95 backdrop-blur-md p-4 sm:p-8 flex items-center justify-center animate-in fade-in duration-200"
       onClick={onClose}
       role="dialog"
       aria-modal="true"
@@ -98,7 +104,7 @@ export function ImageLightbox({
       <button
         ref={closeButtonRef}
         onClick={onClose}
-        className="absolute top-4 right-4 z-10 p-3 rounded-full bg-black/70 border border-white/20 text-white/90 hover:text-white hover:bg-black transition-all shadow-xl focus:outline-none focus:ring-2 focus:ring-[var(--accent)]"
+        className="absolute top-4 right-4 z-50 p-3 rounded-full bg-black/80 border border-white/20 text-white hover:text-white hover:bg-zinc-800 transition-all shadow-2xl focus:outline-none focus:ring-2 focus:ring-[var(--accent)]"
         aria-label="Close Lightbox"
       >
         <X className="w-6 h-6" />
@@ -113,16 +119,17 @@ export function ImageLightbox({
         <img
           src={src}
           alt={alt}
-          className="max-w-[95vw] max-h-[82vh] w-auto h-auto object-contain rounded-xl shadow-2xl border border-white/10"
+          className="max-w-[92vw] max-h-[80vh] w-auto h-auto object-contain rounded-xl shadow-2xl border border-white/10"
         />
 
         {/* Caption Banner */}
         {alt && alt !== "IoT Case Study Evidence" && (
-          <p className="text-xs sm:text-sm font-mono text-zinc-300 bg-black/80 px-4 py-2 rounded-full border border-white/10 text-center max-w-[90vw] truncate">
+          <p className="text-xs sm:text-sm font-mono text-zinc-200 bg-black/80 px-4 py-2 rounded-full border border-white/10 text-center max-w-[90vw] truncate">
             {alt}
           </p>
         )}
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }
