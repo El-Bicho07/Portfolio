@@ -75,7 +75,7 @@ export function Header() {
             href="/contact"
             className="px-4 py-2 text-xs uppercase tracking-wider font-bold rounded-md border border-[var(--accent)] text-[var(--accent)] bg-[var(--accent-muted)] hover:bg-[var(--accent)] hover:text-[var(--bg)] transition-all duration-300 shadow-sm"
           >
-            Let's Talk
+            Let&apos;s Talk
           </Link>
         </div>
 
@@ -122,7 +122,7 @@ export function Header() {
               onClick={() => setMobileMenuOpen(false)}
               className="block w-full text-center py-3 text-xs uppercase tracking-widest font-bold rounded-lg bg-[var(--accent)] text-[var(--bg)] font-semibold shadow-md"
             >
-              Let's Talk
+              Let&apos;s Talk
             </Link>
           </div>
         </div>

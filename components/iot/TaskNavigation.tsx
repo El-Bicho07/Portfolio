@@ -7,23 +7,35 @@ import { IOT_TASKS } from "@/data/iotData";
 export function TaskNavigation() {
   const [activeTask, setActiveTask] = useState<string>("task-01");
   const navContainerRef = useRef<HTMLDivElement>(null);
+  const isClickingRef = useRef<boolean>(false);
 
   useEffect(() => {
     const taskIds = IOT_TASKS.map((t) => t.id);
     let animationFrameId: number;
-    let ticking = false;
 
     const updateActiveTask = () => {
-      const READING_OFFSET = 140; // Fixed offset in pixels matching sticky header + nav height
+      // If user recently clicked a nav item, let click handler maintain state until scroll finishes
+      if (isClickingRef.current) return;
+
+      const READING_LINE = 160; // Reading line threshold in pixels from top of viewport
       let currentActive = taskIds[0];
 
-      for (const id of taskIds) {
-        const el = document.getElementById(id);
-        if (el) {
-          const rect = el.getBoundingClientRect();
-          // If section top has passed or reached the reading line, select this section
-          if (rect.top <= READING_OFFSET) {
-            currentActive = id;
+      // Check if user is at the bottom of the page
+      const isAtBottom =
+        window.innerHeight + window.scrollY >=
+        document.documentElement.scrollHeight - 60;
+
+      if (isAtBottom) {
+        currentActive = taskIds[taskIds.length - 1];
+      } else {
+        // Iterate task sections to find the one closest to or passing the reading line
+        for (const id of taskIds) {
+          const el = document.getElementById(id);
+          if (el) {
+            const rect = el.getBoundingClientRect();
+            if (rect.top <= READING_LINE) {
+              currentActive = id;
+            }
           }
         }
       }
@@ -32,13 +44,8 @@ export function TaskNavigation() {
     };
 
     const handleScroll = () => {
-      if (!ticking) {
-        animationFrameId = window.requestAnimationFrame(() => {
-          updateActiveTask();
-          ticking = false;
-        });
-        ticking = true;
-      }
+      cancelAnimationFrame(animationFrameId);
+      animationFrameId = requestAnimationFrame(updateActiveTask);
     };
 
     // Calculate active task immediately on mount
@@ -50,13 +57,11 @@ export function TaskNavigation() {
     return () => {
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("resize", handleScroll);
-      if (animationFrameId) {
-        window.cancelAnimationFrame(animationFrameId);
-      }
+      cancelAnimationFrame(animationFrameId);
     };
   }, []);
 
-  // Ensure active nav item is scrolled into view in horizontal navigation bar on mobile
+  // Ensure active nav item is scrolled into view inside the horizontal nav bar on mobile
   useEffect(() => {
     if (navContainerRef.current) {
       const activeBtn = navContainerRef.current.querySelector(
@@ -72,15 +77,38 @@ export function TaskNavigation() {
     }
   }, [activeTask]);
 
+  const handleTaskClick = (e: React.MouseEvent, taskId: string) => {
+    e.preventDefault();
+    isClickingRef.current = true;
+    setActiveTask(taskId);
+
+    const el = document.getElementById(taskId);
+    if (el) {
+      const HEADER_OFFSET = 140; // Sticky header + navigation offset
+      const elementTop = el.getBoundingClientRect().top + window.pageYOffset;
+      const offsetPosition = elementTop - HEADER_OFFSET;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+    }
+
+    // Reset click lock after smooth scroll completes
+    setTimeout(() => {
+      isClickingRef.current = false;
+    }, 800);
+  };
+
   return (
     <nav className="sticky top-20 z-40 w-full glass-card rounded-2xl p-2 sm:p-3 border border-[var(--border)] bg-[#12151E]/90 backdrop-blur-md shadow-xl my-8">
       <div
         ref={navContainerRef}
         className="flex items-center gap-2 overflow-x-auto no-scrollbar py-1 px-1"
       >
-        <div className="hidden lg:flex items-center gap-2 px-3 py-1.5 text-xs font-bold uppercase tracking-wider text-[var(--accent)] shrink-0 border-r border-[var(--border)] mr-1">
+        <div className="hidden lg:flex items-center gap-2 px-3 py-1.5 text-xs font-bold uppercase tracking-wider text-[var(--accent)] shrink-0 border-r border-[var(--border)] mr-1 font-heading">
           <Layers className="w-3.5 h-3.5" />
-          <span>Tasks Navigation</span>
+          <span>Task Navigation</span>
         </div>
 
         {IOT_TASKS.map((task) => {
@@ -91,23 +119,7 @@ export function TaskNavigation() {
               key={task.id}
               data-task-id={task.id}
               href={`#${task.id}`}
-              onClick={(e) => {
-                e.preventDefault();
-                setActiveTask(task.id);
-                const el = document.getElementById(task.id);
-                if (el) {
-                  const offset = 140; // Offset for sticky header and nav
-                  const bodyRect = document.body.getBoundingClientRect().top;
-                  const elementRect = el.getBoundingClientRect().top;
-                  const elementPosition = elementRect - bodyRect;
-                  const offsetPosition = elementPosition - offset;
-
-                  window.scrollTo({
-                    top: offsetPosition,
-                    behavior: "smooth",
-                  });
-                }
-              }}
+              onClick={(e) => handleTaskClick(e, task.id)}
               className={`inline-flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition-all duration-200 shrink-0 ${
                 isActive
                   ? "bg-[var(--accent)] text-[var(--bg)] shadow-md scale-102"
@@ -117,7 +129,7 @@ export function TaskNavigation() {
               <span className="font-mono text-[10px] opacity-80">
                 Task {task.number}
               </span>
-              <span className="truncate max-w-[140px] sm:max-w-none">
+              <span className="truncate max-w-[140px] sm:max-w-none font-heading">
                 {task.title.split("&")[0].split("—")[0].trim()}
               </span>
             </a>

@@ -4,7 +4,6 @@ import Link from "next/link";
 import {
   ArrowLeft,
   Cpu,
-  Layers,
   Sparkles,
   BookOpen,
   ArrowRight,
@@ -12,14 +11,16 @@ import {
   Zap,
 } from "lucide-react";
 import { RevealOnScroll } from "@/components/RevealOnScroll";
-import { IOT_HERO_DATA, IOT_TASKS, OVERALL_REFLECTION } from "@/data/iotData";
+import { IOT_HERO_DATA, IOT_TASKS, OVERALL_REFLECTION, PROJECT_OVERVIEW } from "@/data/iotData";
 import { TaskNavigation } from "@/components/iot/TaskNavigation";
 import { TaskSection } from "@/components/iot/TaskSection";
+import { SystemAtAGlance } from "@/components/iot/SystemAtAGlance";
+import { ProgressionMatrix } from "@/components/iot/ProgressionMatrix";
 
 export const metadata: Metadata = {
-  title: "IoT | Suryakumar.dev",
+  title: "IoT & Embedded Systems | Suryakumar.dev",
   description:
-    "IoT & Embedded Systems Documentation — From Prototype to Production (ESP32, MQTT, Firebase, Sensors & Relay Control)",
+    "ESP32 Microcontroller Architecture, MQTT & Firebase Cloud Integration Documentation — ProtoSem Log Week 07",
 };
 
 export default function IoTDocumentationPage() {
@@ -42,7 +43,7 @@ export default function IoTDocumentationPage() {
         </div>
       </RevealOnScroll>
 
-      {/* Hero Section */}
+      {/* 1. HERO SECTION */}
       <RevealOnScroll delayMs={100}>
         <header className="glass-card rounded-2xl p-8 sm:p-12 border border-[var(--border)] bg-[#12151E] space-y-8 shadow-2xl relative overflow-hidden">
           {/* Subtle Ambient Accent Glow */}
@@ -96,11 +97,8 @@ export default function IoTDocumentationPage() {
         </header>
       </RevealOnScroll>
 
-      {/* Task Jump Navigation */}
-      <TaskNavigation />
-
-      {/* Project Overview */}
-      <RevealOnScroll delayMs={200}>
+      {/* Project Overview Card */}
+      <RevealOnScroll delayMs={150}>
         <section className="glass-card rounded-2xl p-6 sm:p-8 border border-[var(--border)] bg-[#12151E] space-y-4 shadow-xl">
           <div className="flex items-center gap-2 border-b border-[var(--border)] pb-3">
             <BookOpen className="w-4 h-4 text-[var(--accent)]" />
@@ -110,12 +108,25 @@ export default function IoTDocumentationPage() {
           </div>
 
           <p className="text-xs sm:text-sm text-[var(--text-secondary)] leading-relaxed">
-            The IoT & Embedded Systems module was structured around a hands-on, step-by-step progression of ESP32 assignments. Rather than jumping straight into complex cloud platforms, the work began with low-level local HTTP socket programming to grasp client-server request cycles. It then transitioned to lightweight publish-subscribe protocols (MQTT via Adafruit IO) for cloud telemetry, event-driven webhooks with IFTTT, and finally full-stack real-time database integration using Google Firebase. Each task added a critical piece of IoT architecture — moving from simple LED control to multi-sensor telemetry, relay load actuation, dual manual/automatic operational modes, and browser-based CSV analytics data export.
+            {PROJECT_OVERVIEW}
           </p>
         </section>
       </RevealOnScroll>
 
-      {/* Main Task Case Studies (Tasks 01 to 05) */}
+      {/* 2. SYSTEM AT A GLANCE */}
+      <RevealOnScroll delayMs={200}>
+        <SystemAtAGlance />
+      </RevealOnScroll>
+
+      {/* 3. TASK PROGRESSION MATRIX */}
+      <RevealOnScroll delayMs={250}>
+        <ProgressionMatrix />
+      </RevealOnScroll>
+
+      {/* 4. STICKY TASK NAVIGATION */}
+      <TaskNavigation />
+
+      {/* 5. MAIN TASK CASE STUDIES (Tasks 01 to 05) */}
       <div className="space-y-12">
         {IOT_TASKS.map((task) => (
           <RevealOnScroll key={task.id} delayMs={100}>
@@ -124,7 +135,7 @@ export default function IoTDocumentationPage() {
         ))}
       </div>
 
-      {/* Overall Synthesis Reflection */}
+      {/* 6. CONCLUSION (Synthesis & Lessons Learned) */}
       <RevealOnScroll delayMs={200}>
         <section className="glass-card rounded-2xl p-8 sm:p-10 border border-[var(--border)] bg-[#12151E] space-y-6 shadow-2xl">
           <div className="space-y-2 border-b border-[var(--border)] pb-4">
@@ -135,11 +146,11 @@ export default function IoTDocumentationPage() {
               </span>
             </div>
             <h2 className="text-2xl sm:text-3xl font-extrabold font-heading text-[var(--text-primary)]">
-              Overall Technical Reflection
+              Overall Technical Reflection & Lessons Learned
             </h2>
           </div>
 
-          <p className="text-sm sm:text-base text-[var(--text-secondary)] leading-relaxed whitespace-pre-line bg-[var(--bg)] p-6 rounded-xl border border-[var(--border)]">
+          <p className="text-sm sm:text-base text-[var(--text-secondary)] leading-relaxed whitespace-pre-line bg-[var(--bg)] p-6 rounded-xl border border-[var(--border)] font-normal">
             {OVERALL_REFLECTION}
           </p>
 
