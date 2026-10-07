@@ -79,11 +79,30 @@ export const PROJECT_OVERVIEW =
 
 
 export const FIREBASE_EVIDENCE_IMAGES: ImageItem[] = [
-  { src: "https://res.cloudinary.com/g52yuts7/image/upload/v1790485835/Screenshot_from_2026-09-27_10-38-09.png" },
-  { src: "https://res.cloudinary.com/g52yuts7/image/upload/v1790485834/Screenshot_from_2026-09-27_10-38-58.png" },
-  { src: "https://res.cloudinary.com/g52yuts7/image/upload/v1790485835/Screenshot_from_2026-09-27_10-39-10.png" },
-  { src: "https://res.cloudinary.com/g52yuts7/image/upload/v1790485835/Screenshot_from_2026-09-27_10-39-51.png" },
-  { src: "https://res.cloudinary.com/g52yuts7/image/upload/v1790485835/Screenshot_from_2026-09-27_10-39-58.png" },
+  {
+    src: "https://res.cloudinary.com/g52yuts7/image/upload/v1790485835/Screenshot_from_2026-09-27_10-38-09.png",
+    alt: "Firebase Web Dashboard User Authentication & Login Screen",
+  },
+  {
+    src: "https://res.cloudinary.com/g52yuts7/image/upload/v1790485834/Screenshot_from_2026-09-27_10-38-58.png",
+    alt: "Next.js IoT Monitoring Landing Page & Real-Time Overview",
+  },
+  {
+    src: "https://res.cloudinary.com/g52yuts7/image/upload/v1791379942/Screenshot_from_2026-10-07_19-01-17.png",
+    alt: "Firebase Realtime Database Multi-Sensor Node Console (/sensorData)",
+  },
+  {
+    src: "https://res.cloudinary.com/g52yuts7/image/upload/v1791379942/Screenshot_from_2026-10-07_19-01-37.png",
+    alt: "Next.js Live Telemetry Monitoring Gauges & Temperature Display",
+  },
+  {
+    src: "https://res.cloudinary.com/g52yuts7/image/upload/v1791379942/Screenshot_from_2026-10-07_19-01-49.png",
+    alt: "Firebase Realtime Database Appliance Control State Node (/appliances)",
+  },
+  {
+    src: "https://res.cloudinary.com/g52yuts7/image/upload/v1791379942/Screenshot_from_2026-10-07_19-01-55.png",
+    alt: "Next.js Dashboard Interactive Relay Toggle Control Widget",
+  },
 ];
 
 export const IOT_TASKS: IoTTask[] = [
@@ -392,8 +411,26 @@ void loop() {
       },
     ],
     images: [
-      { src: "https://res.cloudinary.com/g52yuts7/image/upload/v1790485668/IMG-20260923-WA0070.jpg", alt: "ESP32 Wired to 5V Optocoupler Relay Module on Prototype Workbench" },
-      { src: "https://res.cloudinary.com/g52yuts7/image/upload/v1790485667/IMG-20260923-WA0071.jpg", alt: "Mains Light Bulb Relay Actuation Test Under Cloud Control" },
+      {
+        src: "https://res.cloudinary.com/g52yuts7/image/upload/v1791382568/Screenshot_from_2026-10-07_19-45-14.png",
+        alt: "Adafruit IO Cloud Dashboard — Interactive Remote Relay Toggle Switch",
+      },
+      {
+        src: "https://res.cloudinary.com/g52yuts7/image/upload/v1791382568/Screenshot_from_2026-10-07_19-44-23.png",
+        alt: "Adafruit IO Feed Details — MQTT Feed Topic (relay-control) & Activity Log",
+      },
+      {
+        src: "https://res.cloudinary.com/g52yuts7/image/upload/v1791382568/Screenshot_from_2026-10-07_19-44-39.png",
+        alt: "Adafruit IO Account & Active Feeds Overview Console",
+      },
+      {
+        src: "https://res.cloudinary.com/g52yuts7/image/upload/v1791382568/Screenshot_from_2026-10-07_19-44-52.png",
+        alt: "Adafruit IO Interactive Control Dashboard & Sensor Telemetry Widgets",
+      },
+      {
+        src: "https://res.cloudinary.com/g52yuts7/image/upload/v1791382650/Screenshot_from_2026-10-07_19-47-16.png",
+        alt: "Adafruit IO MQTT Service Integration & Live Data Point Stream",
+      },
     ],
     videos: [
       { provider: "vimeo", videoId: "1230618703", title: "Adafruit IO MQTT Remote Relay Control Demonstration", aspectRatio: "16/9" },
