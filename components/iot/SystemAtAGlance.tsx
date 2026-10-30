@@ -43,7 +43,7 @@ export function SystemAtAGlance() {
       id: "ifttt",
       number: "04",
       name: "IFTTT Engine",
-      sub: "Event Automation Applet",
+      sub: "Voice & Webhook Triggers",
       icon: Zap,
       tag: "Cloud Event",
     },
@@ -144,19 +144,25 @@ export function SystemAtAGlance() {
             <div className="flex items-start gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-sky-400 mt-1.5 shrink-0" />
               <span>
-                <strong className="text-[var(--text-primary)]">Local HTTP:</strong> Web browser GET `/led/on` $\rightarrow$ ESP32 GPIO 2 (LED).
+                <strong className="text-[var(--text-primary)]">Local HTTP:</strong> Browser JavaScript `fetch(&quot;/on&quot;)` $\rightarrow$ ESP32 Web Server $\rightarrow$ GPIO 2 LED.
               </span>
             </div>
             <div className="flex items-start gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-sky-400 mt-1.5 shrink-0" />
               <span>
-                <strong className="text-[var(--text-primary)]">Cloud MQTT:</strong> Adafruit IO Dashboard $\rightarrow$ Topic `relay-control` $\rightarrow$ ESP32 GPIO 4 (Relay).
+                <strong className="text-[var(--text-primary)]">Cloud MQTT:</strong> Adafruit IO Dashboard toggle $\rightarrow$ Feed `esp` $\rightarrow$ ESP32 GPIO 26 (Active-LOW Relay).
               </span>
             </div>
             <div className="flex items-start gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-sky-400 mt-1.5 shrink-0" />
               <span>
-                <strong className="text-[var(--text-primary)]">Event Automation:</strong> IFTTT `If Activate scene` $\rightarrow$ Adafruit IO `bulb-control` (`ON`) $\rightarrow$ ESP32 Relay.
+                <strong className="text-[var(--text-primary)]">Event Automation:</strong> Google Assistant (*&quot;activate Bulb on&quot;*) / Webhook $\rightarrow$ IFTTT $\rightarrow$ Adafruit IO $\rightarrow$ ESP32 GPIO 26.
+              </span>
+            </div>
+            <div className="flex items-start gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-sky-400 mt-1.5 shrink-0" />
+              <span>
+                <strong className="text-[var(--text-primary)]">Cloud Dashboard:</strong> Web UI writes `/control/bulbState` $\rightarrow$ Firebase RTDB $\rightarrow$ ESP32 Relay GPIO 26.
               </span>
             </div>
           </div>
@@ -180,19 +186,25 @@ export function SystemAtAGlance() {
             <div className="flex items-start gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 mt-1.5 shrink-0" />
               <span>
-                <strong className="text-[var(--text-primary)]">Sensor Sampling:</strong> DHT11 (GPIO 14) + LDR Analog (GPIO 34 ADC) sampled every 5s.
+                <strong className="text-[var(--text-primary)]">Sensor Sampling:</strong> DHT11 Digital (GPIO 4) + Digital LDR LM393 DO (GPIO 34) sampled every 5s.
               </span>
             </div>
             <div className="flex items-start gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 mt-1.5 shrink-0" />
               <span>
-                <strong className="text-[var(--text-primary)]">Firebase RTDB:</strong> WebSocket stream to `/sensorData` & `/history/$pushId`.
+                <strong className="text-[var(--text-primary)]">Realtime Synchronization:</strong> `AsyncClient` pushes live telemetry to `/current/*` over WSS/TLS.
               </span>
             </div>
             <div className="flex items-start gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 mt-1.5 shrink-0" />
               <span>
-                <strong className="text-[var(--text-primary)]">Dataset Analytics:</strong> Next.js dashboard parses `/history` JSON into downloadable CSV files.
+                <strong className="text-[var(--text-primary)]">Persistent Logging:</strong> Time-stamped JSON objects pushed chronologically to `/history/$pushId`.
+              </span>
+            </div>
+            <div className="flex items-start gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 mt-1.5 shrink-0" />
+              <span>
+                <strong className="text-[var(--text-primary)]">Dataset Analytics:</strong> Web console (`export.js`) queries `/history` and generates downloadable RFC-4180 CSV files.
               </span>
             </div>
           </div>
