@@ -1008,7 +1008,14 @@ export const IOT_TASKS: IoTTask[] = [
       },
     ],
     images: FIREBASE_EVIDENCE_IMAGES,
-    videos: [],
+    videos: [
+      {
+        provider: "vimeo",
+        videoId: "1242735151",
+        title: "IoT-Dashboard — EMS-01 Firebase Web Console Workflow Demonstration",
+        aspectRatio: "16/9",
+      },
+    ],
     troubleshooting: [
       {
         problem: "Firebase Permission Denied Error with Unauthenticated Firmware",
@@ -1276,6 +1283,10 @@ export const IOT_TASKS: IoTTask[] = [
       {
         src: "https://res.cloudinary.com/g52yuts7/image/upload/v1791379292/Screenshot_from_2026-09-30_00-08-57.png",
         alt: "Firebase Realtime Database Console Showing /current and /history Push Nodes",
+      },
+      {
+        src: "https://res.cloudinary.com/g52yuts7/image/upload/v1793696513/Screenshot_from_2026-11-03_14-30-15.png",
+        alt: "EMS-01 Downloaded Historical Sensor Telemetry CSV Dataset Opened in Spreadsheet Application",
       },
     ],
     videos: [
